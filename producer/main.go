@@ -41,6 +41,8 @@ func publish(ctx context.Context, gid int, wg *sync.WaitGroup, txnProducer saram
 			logrus.Info("the goroutine is canceled")
 			logrus.Infof("Enqueued: %d; errors: %d\n", enqueued, errors)
 			//shutdown producer
+			//wait to ensure data is seen before closing producer
+			time.Sleep(5 * time.Second)
 			txnProducer.AsyncClose()
 			return
 		// This is normal case, message is seen to kafka cluster
