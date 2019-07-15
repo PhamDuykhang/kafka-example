@@ -64,8 +64,10 @@ func main() {
 	kafkaConf.Producer.Partitioner = sarama.NewRandomPartitioner
 	//RequiredAcks the parameter to decide kakfa producer, does producer have to wait for a notification
 	//before sending new message
+	// to read addition config, you can see at https://godoc.org/github.com/Shopify/sarama#Config
 	kafkaConf.Producer.RequiredAcks = sarama.NoResponse
-
+	// the address of broker should be a list of borken
+	// ex: []string{"broker1":broke_port1","broker2":broke_port2","brokern":broke_portn"}
 	producer, err := sarama.NewAsyncProducer([]string{"localhost:9092"}, kafkaConf)
 	if err != nil {
 		logrus.Errorf("can't create kafka producer err:%v", err)
