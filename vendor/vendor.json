@@ -39,6 +39,12 @@
 			"revisionTime": "2018-02-27T14:14:24Z"
 		},
 		{
+			"checksumSHA1": "IHIm2BA6DrJDHvALz65pY2G38sM=",
+			"path": "github.com/golang/mock/gomock",
+			"revision": "dd8d2a22370e4c8a334e80ca8477f71356c8e4bb",
+			"revisionTime": "2019-07-13T10:24:42Z"
+		},
+		{
 			"checksumSHA1": "L3HoHVqp2EaBSOqBxB7l0PTyu7g=",
 			"path": "github.com/golang/snappy",
 			"revision": "2a8bb927dd31d8daada140a5d09578521ce5c36a",
@@ -49,6 +55,12 @@
 			"path": "github.com/google/uuid",
 			"revision": "c2e93f3ae59f2904160ceaab466009f965df46d6",
 			"revisionTime": "2019-04-16T17:24:45Z"
+		},
+		{
+			"checksumSHA1": "2Iy16w6c+4oMD8TtobbO0qsCrDo=",
+			"path": "github.com/gorilla/mux",
+			"revision": "d83b6ffe499a29cc05fc977988d0392851779620",
+			"revisionTime": "2019-07-01T20:26:33Z"
 		},
 		{
 			"checksumSHA1": "5AxXPtBqAKyFGcttFzxT5hp/3Tk=",
@@ -87,6 +99,12 @@
 			"revisionTime": "2019-07-01T08:10:48Z"
 		},
 		{
+			"checksumSHA1": "LuFv4/jlrmFNnDb/5SCSEPAM9vU=",
+			"path": "github.com/pmezard/go-difflib/difflib",
+			"revision": "5d4384ee4fb2527b0a1256a821ebfc92f91efefc",
+			"revisionTime": "2018-12-26T10:54:42Z"
+		},
+		{
 			"checksumSHA1": "/pBnk+4bUBlBzVC8I9DZ4WFCBWk=",
 			"path": "github.com/rcrowley/go-metrics",
 			"revision": "9beb055b7962d16947a14e1cd718098a2431e20e",
@@ -97,6 +115,36 @@
 			"path": "github.com/sirupsen/logrus",
 			"revision": "07a84ee7412e7a28663d92930a1d46f81b124ee1",
 			"revisionTime": "2019-07-01T14:35:06Z"
+		},
+		{
+			"checksumSHA1": "tLHFmMOC2eMcXYaPXfifUVj3wX4=",
+			"path": "github.com/stretchr/objx",
+			"revision": "35313a95ee26395aa17d366c71a2ccf788fa69b6",
+			"revisionTime": "2019-04-15T11:18:23Z"
+		},
+		{
+			"checksumSHA1": "bae8IfDLNuW/wqEicyrKV8q7K7Y=",
+			"path": "github.com/stretchr/testify",
+			"revision": "221dbe5ed46703ee255b1da0dec05086f5035f62",
+			"revisionTime": "2019-05-17T17:51:56Z"
+		},
+		{
+			"checksumSHA1": "/7bZ0f2fM9AAsLf3nMca6Gtlm6E=",
+			"path": "github.com/stretchr/testify/assert",
+			"revision": "221dbe5ed46703ee255b1da0dec05086f5035f62",
+			"revisionTime": "2019-05-17T17:51:56Z"
+		},
+		{
+			"checksumSHA1": "fg3TzS9/QK3wZbzei3Z6O8XPLHg=",
+			"path": "github.com/stretchr/testify/http",
+			"revision": "221dbe5ed46703ee255b1da0dec05086f5035f62",
+			"revisionTime": "2019-05-17T17:51:56Z"
+		},
+		{
+			"checksumSHA1": "bg70xAHEu6HRf2iFu8h5iJBjUfg=",
+			"path": "github.com/stretchr/testify/mock",
+			"revision": "221dbe5ed46703ee255b1da0dec05086f5035f62",
+			"revisionTime": "2019-05-17T17:51:56Z"
 		},
 		{
 			"checksumSHA1": "UDvj5huw3BaGehfVRCB1UGQAtP4=",
@@ -331,6 +379,12 @@
 			"path": "gopkg.in/jcmturner/rpc.v1/ndr",
 			"revision": "99a8ce2fbf8b8087b6ed12a37c61b10f04070043",
 			"revisionTime": "2018-08-26T21:10:00Z"
+		},
+		{
+			"checksumSHA1": "QqDq2x8XOU7IoOR98Cx1eiV5QY8=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "51d6538a90f86fe93ac480b35f37b2be17fef232",
+			"revisionTime": "2018-11-15T11:05:04Z"
 		}
 	],
 	"rootPath": "github.com/PhamDuyKhang/kafkaexamples"
