@@ -24,5 +24,4 @@ func TestGetGreeting(T *testing.T) {
 	gotData := greetingSvr.GetGreeting()
 
 	assert.Equal(T, expectID, gotData.ID, "two id isn't same")
-
 }

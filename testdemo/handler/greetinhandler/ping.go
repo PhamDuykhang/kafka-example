@@ -36,6 +36,7 @@ func (handler *GreetingHandler) Ping(w http.ResponseWriter, r *http.Request) {
 	w.Write(data)
 }
 func (handler *GreetingHandler) SayHi(w http.ResponseWriter, r *http.Request) {
+
 	logrus.Info("say hi")
 	mgs := handler.service.GetGreeting()
 	data, err := json.MarshalIndent(mgs, "", " ")
