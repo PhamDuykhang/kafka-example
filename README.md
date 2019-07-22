@@ -9,7 +9,7 @@ The repository have 5 part :
 
 ------------
 ## How to use
-#####1. Create kafka cluster by docker:
+### 1. Create kafka cluster by docker:
  To run kafka cluster by docker, you can go to [landoop/kafka-lenses-dockerhub](https://hub.docker.com/r/landoop/kafka-lenses-dev/ "landoop/kafka-lenses")
 - Lenses kafka- Web UI for kafka:  `localhost:3030`
 - Kafka broker : `localhost:9092`

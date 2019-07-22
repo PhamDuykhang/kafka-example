@@ -16,14 +16,16 @@ import (
 )
 
 const (
-	TOPIC_NAME    = "demo_topic"
+	TOPIC_NAME    = "bulk"
 	PARTITION_NUM = 2
 )
 
-func publish(ctx context.Context, gid int, wg *sync.WaitGroup, txnProducer sarama.AsyncProducer) {
+func publish(ctx context.Context, gid int, wg *sync.WaitGroup, txnProducer *sarama.AsyncProducer) {
 	defer wg.Done()
 	var enqueued, errors int
+	txn := *txnProducer
 	for {
+		time.Sleep(11 * time.Nanosecond)
 		uuid := uuid.New()
 		id := uuid.String()
 
@@ -42,15 +44,15 @@ func publish(ctx context.Context, gid int, wg *sync.WaitGroup, txnProducer saram
 			logrus.Infof("Enqueued: %d; errors: %d\n", enqueued, errors)
 			//shutdown producer
 			//wait to ensure data is seen before closing producer
-			time.Sleep(5 * time.Second)
-			txnProducer.AsyncClose()
+			time.Sleep(400 * time.Millisecond)
+			txn.AsyncClose()
 			return
 		// This is normal case, message is seen to kafka cluster
-		case txnProducer.Input() <- transcationMessage:
+		case txn.Input() <- transcationMessage:
 			enqueued++
 			logrus.Infof("goroutine #%d seen id: %s \n", gid, uuid.String())
 		// calculate errors and success
-		case err := <-txnProducer.Errors():
+		case err := <-txn.Errors():
 			log.Println("Failed to produce message", err)
 			errors++
 		}
@@ -67,7 +69,7 @@ func main() {
 	//RequiredAcks the parameter to decide kakfa producer, does producer have to wait for a notification
 	//before sending new message
 	// to read addition config, you can see at https://godoc.org/github.com/Shopify/sarama#Config
-	kafkaConf.Producer.RequiredAcks = sarama.NoResponse
+	kafkaConf.Producer.RequiredAcks = sarama.WaitForAll
 	// the address of broker should be a list of borken
 	// ex: []string{"broker1":broke_port1","broker2":broke_port2","brokern":broke_portn"}
 	producer, err := sarama.NewAsyncProducer([]string{"localhost:9092"}, kafkaConf)
@@ -77,14 +79,14 @@ func main() {
 	ctx := context.Background()
 	// trap Ctrl+C and call cancel on the context
 	ctx, cancel := context.WithCancel(ctx)
-	go func(ctx context.Context, producer sarama.AsyncProducer) {
+	go func(ctx context.Context, producer *sarama.AsyncProducer) {
 		var wg sync.WaitGroup
-		for i := 1; i <= 5; i++ {
+		for i := 1; i <= 4; i++ {
 			wg.Add(1)
 			go publish(ctx, i, &wg, producer)
 		}
 		wg.Wait()
-	}(ctx, producer)
+	}(ctx, &producer)
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt)
 	<-c

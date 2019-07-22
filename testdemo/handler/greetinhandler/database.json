@@ -1,0 +1,40 @@
+{
+  "file_collection": [
+    {
+      "file_id": 1,
+      "file_name": "",
+      "total_customer" : 1000,
+      "total_success": 900,
+      "total_failure": 100,
+      "total_point": 100000,
+      "file_status": "waiting,processing,success",
+      "created_at": "2019-01-01T03:02:01.000Z",
+      "updated_at": "2019-01-01T03:02:01.000Z",
+      "created_by": "K"
+    },
+    {
+      "file_id": 2,
+      "file_name": "",
+      "total_customer" : 1000,
+      "total_success": 900,
+      "total_failure": 100,
+      "total_point": 100000,
+      "file_status": "waiting,processing,success",
+      "created_at": "2019-01-01T03:02:01.000Z",
+      "updated_at": "2019-01-01T03:02:01.000Z",
+      "created_by": "K"
+    },
+    {
+      "file_id": 3,
+      "file_name": "",
+      "total_customer" : 1000,
+      "total_success": 900,
+      "total_failure": 100,
+      "total_point": 100000,
+      "file_status": "waiting,processing,success",
+      "created_at": "2019-01-01T03:02:01.000Z",
+      "updated_at": "2019-01-01T03:02:01.000Z",
+      "created_by": "K"
+    }
+  ]
+}

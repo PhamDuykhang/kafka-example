@@ -25,8 +25,8 @@ func (srv GreetingService) GetGreeting() types.Greeting {
 	decorationString := "requestID:32303-545-32"
 	st := srv.repo.GetOne()
 	st.ID = st.ID + decorationString
-	// t := time.Now()
-	// st.Time = t.Format("Mon Jan 2 15:04:05 -0700 MST 2006")
+	t := time.Now()
+	st.Time = t.Format("Mon Jan 2 15:04:05 -0700 MST 2006")
 	return st
 }
 func (srv GreetingService) SaySimply() types.Greeting {

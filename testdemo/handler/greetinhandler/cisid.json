@@ -1,0 +1,19 @@
+{
+  "customer_info": [
+    {
+      "cis_id": "1",
+      "file_id": 1,
+      "cis_name": "pham duy khang"
+    },
+    {
+      "cis_id": "2",
+      "file_id": 2,
+      "cis_name": "dasdasd"
+    },
+    {
+      "cis_id": "1",
+      "file_id": 3,
+      "cis_name": "pham duy khang"
+    }
+  ]
+}
